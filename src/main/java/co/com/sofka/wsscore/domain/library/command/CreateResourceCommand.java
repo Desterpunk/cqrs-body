@@ -2,9 +2,15 @@ package co.com.sofka.wsscore.domain.library.command;
 
 import co.com.sofka.wsscore.domain.generic.Command;
 
+import java.time.LocalDate;
+
 public class CreateResourceCommand extends Command {
     private String resourceId;
     private String name;
+    private String resourceType;
+    private String area;
+    private LocalDate date;
+    private Boolean available;
 
     public CreateResourceCommand(){
 
@@ -24,5 +30,37 @@ public class CreateResourceCommand extends Command {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getResourceType() {
+        return resourceType;
+    }
+
+    public void setResourceType(String resourceType) {
+        this.resourceType = resourceType;
+    }
+
+    public String getArea() {
+        return area;
+    }
+
+    public void setArea(String area) {
+        this.area = area;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    public Boolean getAvailable() {
+        return available;
+    }
+
+    public void setAvailable(Boolean available) {
+        this.available = available;
     }
 }

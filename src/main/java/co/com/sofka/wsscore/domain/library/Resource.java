@@ -5,15 +5,20 @@ import co.com.sofka.wsscore.domain.generic.DomainEvent;
 import co.com.sofka.wsscore.domain.generic.EventChange;
 import co.com.sofka.wsscore.domain.library.event.ResourceCreated;
 
+import java.time.LocalDate;
 import java.util.*;
 
 
 public class Resource extends AggregateRoot implements EventChange {
     private String name;
+    private String resourceType;
+    private String area;
+    private LocalDate date;
+    private Boolean available;
 
-    public Resource(String resourceId, String name){
+    public Resource(String resourceId, String name, String resourceType, String area, LocalDate date, Boolean available){
         super(resourceId);
-        appendChange(new ResourceCreated(name)).apply();
+        appendChange(new ResourceCreated(name, resourceType, area, date, available)).apply();
     }
 
     private Resource(String id){
@@ -21,6 +26,10 @@ public class Resource extends AggregateRoot implements EventChange {
         subscribe(this);
         listener((ResourceCreated event)-> {
           this.name = event.getName();
+          this.resourceType = event.getResourceType();
+          this.area = event.getArea();
+          this.date = event.getDate();
+          this.available = event.getAvailable();
         });
     }
 
@@ -32,5 +41,25 @@ public class Resource extends AggregateRoot implements EventChange {
 
     public String name() {
         return name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getResourceType() {
+        return resourceType;
+    }
+
+    public String getArea() {
+        return area;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public Boolean getAvailable() {
+        return available;
     }
 }

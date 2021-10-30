@@ -13,7 +13,7 @@ public class CreateResourceUseCase implements Function<CreateResourceCommand, Li
 
     @Override
     public List<DomainEvent> apply(CreateResourceCommand command) {
-        var resource = new Resource(command.getResourceId(), command.getName());
+        var resource = new Resource(command.getResourceId(), command.getName(), command.getResourceType(), command.getArea(), command.getDate(), command.getAvailable());
         return resource.getUncommittedChanges();
     }
 }

@@ -6,6 +6,7 @@ import io.quarkus.vertx.ConsumeEvent;
 import org.bson.Document;
 
 import javax.enterprise.context.ApplicationScoped;
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -24,6 +25,10 @@ public class ResourceHandle {
         Map<String, Object> document = new HashMap<>();
         document.put("_id", event.getAggregateId());
         document.put("name", event.getName());
+        document.put("resourceType", event.getResourceType());
+        document.put("area", event.getArea());
+        document.put("date", event.getDate());
+        document.put("available", event.getAvailable());
 
         mongoClient.getDatabase("queries")
                 .getCollection("resource")

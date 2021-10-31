@@ -47,7 +47,7 @@ public class MessageService {
                 try {
                     var event = EventSerializer.instance()
                             .deserialize(message, Class.forName(properties.getContentType()));
-                    bus.publish(event.getResourceType(), event);// emite localmente eventos
+                    bus.publish(event.getType(), event);// emite localmente eventos
                 } catch (ClassNotFoundException e) {
                     e.printStackTrace();
                 }

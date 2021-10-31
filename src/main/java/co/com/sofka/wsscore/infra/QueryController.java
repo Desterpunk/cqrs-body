@@ -20,12 +20,12 @@ public class QueryController {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/program/{id}")
-    public Response get(@PathParam("id") String programId) {
+    @Path("/resource/{id}")
+    public Response get(@PathParam("id") String resourceId) {
         List<Document> documentList = new ArrayList<>();
         mongoClient.getDatabase("queries")
-                .getCollection("program")
-                .find(Filters.eq("_id", programId))
+                .getCollection("resource")
+                .find(Filters.eq("_id", resourceId))
                 .forEach(documentList::add);
         return Response.ok(documentList).build();
     }

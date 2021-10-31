@@ -6,21 +6,21 @@ import io.quarkus.vertx.ConsumeEvent;
 import org.bson.Document;
 
 import javax.enterprise.context.ApplicationScoped;
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 
 
 @ApplicationScoped
-public class ProgramHandle {
+public class ResourceHandle {
     private final MongoClient mongoClient;
 
-    public ProgramHandle(MongoClient mongoClient) {
+    public ResourceHandle(MongoClient mongoClient) {
         this.mongoClient = mongoClient;
     }
 
-
-    @ConsumeEvent(value = "sofkau.program.resourcecreated", blocking = true)
-    void consumeProgramCreated(ResourceCreated event) {
+    @ConsumeEvent(value = "sofkau.library.resourcecreated", blocking = true)
+    void consumeResourceCreated(ResourceCreated event) {
         Map<String, Object> document = new HashMap<>();
         document.put("_id", event.getAggregateId());
         document.put("name", event.getName());

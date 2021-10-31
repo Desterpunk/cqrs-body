@@ -16,7 +16,7 @@ public abstract class DomainEvent implements Serializable {
         this.instant = Instant.now();
     }
 
-    public String getResourceType() {
+    public String getType() {
         return type;
     }
 

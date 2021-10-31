@@ -18,7 +18,7 @@ public class Resource extends AggregateRoot implements EventChange {
 
     public Resource(String resourceId, String name, String resourceType, String area, LocalDate date, Boolean available){
         super(resourceId);
-        appendChange(new ResourceCreated(name,resourceType,area,date, available)).apply();
+        appendChange(new ResourceCreated(name, resourceType, area, date, available)).apply();
     }
 
     private Resource(String id){
@@ -26,13 +26,17 @@ public class Resource extends AggregateRoot implements EventChange {
         subscribe(this);
         listener((ResourceCreated event)-> {
           this.name = event.getName();
+          this.resourceType = event.getResourceType();
+          this.area = event.getArea();
+          this.date = LocalDate.parse(event.getDate());
+          this.available = event.getAvailable();
         });
     }
 
     public static Resource from(String id, List<DomainEvent> events){
-        var program = new Resource(id);
-        events.forEach(program::applyEvent);
-        return program;
+        var resource = new Resource(id);
+        events.forEach(resource::applyEvent);
+        return resource;
     }
 
     public String name() {

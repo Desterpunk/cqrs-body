@@ -18,7 +18,8 @@ public abstract class UseCaseHandle {
     @Inject
     private   MessageService messageService;
 
-    public void saveProgram(String resourceId, List<DomainEvent> events) {
+
+    public void saveResource(String resourceId, List<DomainEvent> events) {
         events.stream().map(event -> {
             String eventBody = EventSerializer.instance().serialize(event);
             return new StoredEvent(event.getClass().getTypeName(), new Date(), eventBody);

@@ -2,6 +2,7 @@ package co.com.sofka.wsscore.infra;
 
 
 import co.com.sofka.wsscore.domain.library.command.CreateResourceCommand;
+import co.com.sofka.wsscore.domain.library.command.DeleteResourceCommand;
 import io.vertx.mutiny.core.eventbus.EventBus;
 
 import javax.ws.rs.*;
@@ -22,4 +23,13 @@ public class CommandController {
         bus.publish(command.getType(), command);//emitir comandos, los casos de uso
         return Response.ok().build();
     }
+
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("/deleteResource")
+    public Response executor(DeleteResourceCommand command){
+        bus.publish(command.getType(),command);
+        return Response.ok().build();
+    }
+
 }

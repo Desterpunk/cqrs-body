@@ -2,6 +2,7 @@ package co.com.sofka.wsscore.infra;
 
 
 import co.com.sofka.wsscore.domain.library.command.CreateResourceCommand;
+import co.com.sofka.wsscore.domain.library.command.UpdateResourceCommand;
 import io.vertx.mutiny.core.eventbus.EventBus;
 
 import javax.ws.rs.*;
@@ -20,6 +21,15 @@ public class CommandController {
     @Consumes(MediaType.APPLICATION_JSON)
     @Path("/createResource")
     public Response executor(CreateResourceCommand command) {
+        command.setDate(LocalDate.now());
+        bus.publish(command.getType(), command);//emitir comandos, los casos de uso
+        return Response.ok().build();
+    }
+
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("/updateResource")
+    public Response executorUpdateResource(UpdateResourceCommand command) {
         command.setDate(LocalDate.now());
         bus.publish(command.getType(), command);//emitir comandos, los casos de uso
         return Response.ok().build();

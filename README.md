@@ -1,4 +1,4 @@
-# Patron de arquitectura: Command and Query Responsibility Segregation
+# Patrón de arquitectura: Command and Query Responsibility Segregation
 
 # Diagrama 
 

@@ -20,7 +20,6 @@ public class ResourceCreated extends DomainEvent {
         this.area = area;
         this.date = date.toString();
         this.available = available;
-
     }
 
     public String getName() {

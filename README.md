@@ -6,7 +6,7 @@ https://hub.docker.com/r/desterpunk/demo-cqrs
 
 # Diagrama 
 
-<a href="https://ibb.co/9p32FBH"><img src="https://i.ibb.co/p1rZtNj/Librer-a-drawio.png" alt="Librer-a-drawio" border="0"></a>
+<a href="https://ibb.co/5XD5FsX"><img src="https://i.ibb.co/MyTR6Py/Librer-a-drawio.png" alt="Librer-a-drawio" border="0"></a>
 
 En este taller entregamos la propuesta de arquitectura del proyecto que estés diseñado o que se plantee dentro del training de desarrollo de software. Se debe entregar los diagramas de interacciones y la forma de cómo se integra con los sistema externos. Describir los componentes y los agregados a nivel de interacciones.
 

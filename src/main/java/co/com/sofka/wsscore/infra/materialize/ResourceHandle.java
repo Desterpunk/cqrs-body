@@ -1,6 +1,7 @@
 package co.com.sofka.wsscore.infra.materialize;
 
 import co.com.sofka.wsscore.domain.library.event.ResourceCreated;
+import co.com.sofka.wsscore.domain.library.event.ResourceDeleted;
 import co.com.sofka.wsscore.domain.library.event.ResourceUpdated;
 import com.mongodb.BasicDBObject;
 import com.mongodb.client.MongoClient;
@@ -54,5 +55,12 @@ public class ResourceHandle {
         mongoClient.getDatabase("queries")
                 .getCollection("resource")
                 .updateOne(Filters.eq("_id", event.getAggregateId()), updateObject);
+    }
+
+    @ConsumeEvent(value = "sofkau.library.resourcedeleted", blocking = true)
+    void consumeResourceDeleted(ResourceDeleted event)
+    {
+        mongoClient.getDatabase("queries").getCollection("resource")
+                .deleteOne(Filters.eq("_id", event.getAggregateId()));
     }
 }

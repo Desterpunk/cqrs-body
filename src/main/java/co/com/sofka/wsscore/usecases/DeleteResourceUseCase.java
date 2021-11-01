@@ -23,7 +23,7 @@ public class DeleteResourceUseCase implements Function<DeleteResourceCommand, Li
         var resource = Resource.from(
                 command.getResourceId(), repository.getEventsBy("resource",command.getResourceId())
         );
-        System.out.println(resource.getName());
+        resource.delete();
         return resource.getUncommittedChanges();
     }
 }

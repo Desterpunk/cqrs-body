@@ -1,59 +1,22 @@
-# code-with-quarkus Project
+# Patron de arquitectura: Command and Query Responsibility Segregation
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+# Diagrama 
 
-If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
+<a href="https://ibb.co/9p32FBH"><img src="https://i.ibb.co/p1rZtNj/Librer-a-drawio.png" alt="Librer-a-drawio" border="0"></a>
 
-## Running the application in dev mode
+En este taller entregamos la propuesta de arquitectura del proyecto que estés diseñado o que se plantee dentro del training de desarrollo de software. Se debe entregar los diagramas de interacciones y la forma de cómo se integra con los sistema externos. Describir los componentes y los agregados a nivel de interacciones.
 
-You can run your application in dev mode that enables live coding using:
-```shell script
-./mvnw compile quarkus:dev
-```
+En el diseño propuesto debe tener en cuenta lo siguiente:
 
-> **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at http://localhost:8080/q/dev/.
-
-## Packaging and running the application
-
-The application can be packaged using:
-```shell script
-./mvnw package
-```
-It produces the `quarkus-run.jar` file in the `target/quarkus-app/` directory.
-Be aware that it’s not an _über-jar_ as the dependencies are copied into the `target/quarkus-app/lib/` directory.
-
-The application is now runnable using `java -jar target/quarkus-app/quarkus-run.jar`.
-
-If you want to build an _über-jar_, execute the following command:
-```shell script
-./mvnw package -Dquarkus.package.type=uber-jar
-```
-
-The application, packaged as an _über-jar_, is now runnable using `java -jar target/*-runner.jar`.
-
-## Creating a native executable
-
-You can create a native executable using: 
-```shell script
-./mvnw package -Pnative
-```
-
-Or, if you don't have GraalVM installed, you can run the native executable build in a container using: 
-```shell script
-./mvnw package -Pnative -Dquarkus.native.container-build=true
-```
-
-You can then execute your native executable with: `./target/code-with-quarkus-1.0.0-SNAPSHOT-runner`
-
-If you want to learn more about building native executables, please consult https://quarkus.io/guides/maven-tooling.html.
-
-## Provided Code
-
-### RESTEasy JAX-RS
-
-Easily start your RESTful Web Services
-
-[Related guide section...](https://quarkus.io/guides/getting-started#the-jax-rs-resources)
+Diagrama modular de componentes orientado a capas
+Diagrama de componentes internos (separaciones de paquetes)
+Detalle o descripción de cada modulo diseñado en la propuesta.
 
 
-https://quarkus.io/guides/deploying-to-heroku
+Para esta tarea se puede realizar realizar usando la herramienta online https://app.diagrams.net/. Puedes ver un ejemplo de como se usa aquí: https://www.youtube.com/watch?v=kQ7V5pM6K00
+
+Un ejemplo de como podría plantearse una propuesta de arquitectura seria la siguiente:
+
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/h7x2vZ9/pasdasdsd.jpg" alt="pasdasdsd" border="0"></a>
+
+Descriptor de tareas: Diseño del subsistema

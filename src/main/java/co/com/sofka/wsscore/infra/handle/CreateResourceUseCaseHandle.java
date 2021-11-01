@@ -16,7 +16,7 @@ public class CreateResourceUseCaseHandle extends UseCaseHandle {
         this.createResourceUseCase = createResourceUseCase;
     }
 
-    @ConsumeEvent(value = "sofkau.resource.createresource")
+    @ConsumeEvent(value = "sofkau.library.createresource")
     void consumeBlocking(CreateResourceCommand command) {
         var events = createResourceUseCase.apply(command);
         saveResource(command.getResourceId(), events);

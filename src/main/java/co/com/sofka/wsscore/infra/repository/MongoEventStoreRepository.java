@@ -37,6 +37,9 @@ public class MongoEventStoreRepository implements EventStoreRepository {
                         throw new RuntimeException(e);
                     }
                 }).forEach(events::add);
+        if (events.isEmpty())
+            throw new IllegalArgumentException("Resource not found");
+
         return events;
     }
 

@@ -4,17 +4,15 @@ import co.com.sofka.wsscore.domain.generic.DomainEvent;
 
 import java.time.LocalDate;
 
-public class ResourceCreated extends DomainEvent {
-
+public class ResourceUpdated extends DomainEvent {
     private final String name;
     private final String resourceType;
     private final String area;
     private final String date;
     private final Boolean available;
 
-
-    public ResourceCreated(String name, String resourceType, String area, LocalDate date, Boolean available) {
-        super("sofkau.library.resourcecreated");
+    public ResourceUpdated(String name, String resourceType, String area, LocalDate date, Boolean available) {
+        super("sofkau.library.resourceupdated");
         this.name = name;
         this.resourceType = resourceType;
         this.area = area;

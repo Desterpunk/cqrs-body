@@ -5,6 +5,7 @@ import co.com.sofka.wsscore.domain.library.Resource;
 import co.com.sofka.wsscore.domain.library.command.CreateResourceCommand;
 
 import javax.enterprise.context.Dependent;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.function.Function;
 

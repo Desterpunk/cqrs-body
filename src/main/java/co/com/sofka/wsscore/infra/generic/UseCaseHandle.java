@@ -16,7 +16,7 @@ public abstract class UseCaseHandle {
     private  EventStoreRepository repository;
 
     @Inject
-    private   MessageService messageService;;
+    private   MessageService messageService;
 
     public void saveResource(String resourceId, List<DomainEvent> events) {
         events.stream().map(event -> {

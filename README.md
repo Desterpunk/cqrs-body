@@ -1,5 +1,9 @@
 # Patrón de arquitectura: Command and Query Responsibility Segregation
 
+# Docker:
+
+https://hub.docker.com/r/desterpunk/demo-cqrs
+
 # Diagrama 
 
 <a href="https://ibb.co/9p32FBH"><img src="https://i.ibb.co/p1rZtNj/Librer-a-drawio.png" alt="Librer-a-drawio" border="0"></a>

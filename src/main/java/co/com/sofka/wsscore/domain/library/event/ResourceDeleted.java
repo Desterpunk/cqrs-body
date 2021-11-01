@@ -6,7 +6,9 @@ import java.time.LocalDate;
 
 public class ResourceDeleted extends DomainEvent {
 
-    public ResourceDeleted() {
-        super("sofkau.resource.resourcedeleted");
+    public ResourceDeleted()
+    {
+        super("sofkau.library.resourcedeleted");
     }
+
 }

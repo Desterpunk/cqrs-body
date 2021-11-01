@@ -18,7 +18,7 @@ public class DeleteResourceUseCaseHandle extends UseCaseHandle {
         this.deleteResourceUseCase = deleteResourceUseCase;
     }
 
-    @ConsumeEvent(value = "sofkau.resource.deleteresource")
+    @ConsumeEvent(value = "sofkau.library.deleteresource")
     void consumeBlocking(DeleteResourceCommand command) {
         var events = deleteResourceUseCase.apply(command);
         saveResource(command.getResourceId(), events);
